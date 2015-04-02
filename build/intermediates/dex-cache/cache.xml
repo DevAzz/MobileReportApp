@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="D:\sdk\extras\android\m2repository\com\android\support\support-annotations\22.0.0\support-annotations-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="D:\MobileReportApp\app\build\intermediates\pre-dexed\debug\support-annotations-22.0.0-80f931b3b46d1910cf722fa387aa37f2729c9eeb.jar" />
+    </item>
+    <item
+        jar="D:\MobileReportApp\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
+        <dex dex="D:\MobileReportApp\app\build\intermediates\pre-dexed\debug\classes-ad8114afd2756aa7742664a3ed2f7acde240b621.jar" />
+    </item>
+    <item
+        jar="D:\MobileReportApp\app\build\intermediates\exploded-aar\com.mikepenz.materialdrawer\library\0.9.5\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="196889103665d7eae17105a5a78f141086044301">
+        <dex dex="D:\MobileReportApp\app\build\intermediates\pre-dexed\debug\classes-b8c6171c8c99187d8aff3aba3a0daf9805097450.jar" />
+    </item>
+    <item
+        jar="D:\MobileReportApp\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\libs\internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="D:\MobileReportApp\app\build\intermediates\pre-dexed\debug\internal_impl-22.0.0-22d2131ab758010729508f38c317df96a22517d3.jar" />
+    </item>
+    <item
+        jar="D:\MobileReportApp\app\build\intermediates\exploded-aar\com.mikepenz.iconics\library\0.7.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="6d88ec155032460a5f4efa723a04c460d3391193">
+        <dex dex="D:\MobileReportApp\app\build\intermediates\pre-dexed\debug\classes-6d5dc448aeedf02c845c3210c4eb6932f325f41d.jar" />
+    </item>
+    <item
+        jar="D:\MobileReportApp\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
+        <dex dex="D:\MobileReportApp\app\build\intermediates\pre-dexed\debug\classes-26fb43d503bcd55495befc080b3ec92632f995ac.jar" />
+    </item>
+
+</items>
