@@ -2,11 +2,25 @@
 <items version="2" >
 
     <item
-        jar="D:\sdk\extras\android\m2repository\com\android\support\support-annotations\22.0.0\support-annotations-22.0.0.jar"
+        jar="D:\MobileReportApp\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\7.0.0\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
-        <dex dex="D:\MobileReportApp\app\build\intermediates\pre-dexed\debug\support-annotations-22.0.0-80f931b3b46d1910cf722fa387aa37f2729c9eeb.jar" />
+        sha1="a08d65794b844d8e7540bf9a33859bf3b2482d7f">
+        <dex dex="D:\MobileReportApp\app\build\intermediates\pre-dexed\debug\classes-eb3efe3775644c8be8bd322b7dc06e37ffc46048.jar" />
+    </item>
+    <item
+        jar="D:\MobileReportApp\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="17f8750d5c0749e44dd7c54aa390d9c937803825">
+        <dex dex="D:\MobileReportApp\app\build\intermediates\pre-dexed\debug\classes-15f81d47c950e19304c2e844d6d81d0fad08546d.jar" />
+    </item>
+    <item
+        jar="D:\MobileReportApp\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="3033cc3a2c68dff3e5b646d6d084bdbdf7d00b25">
+        <dex dex="D:\MobileReportApp\app\build\intermediates\pre-dexed\debug\classes-3ddf54e4a975d4be071a6feb7338a238e2624e21.jar" />
     </item>
     <item
         jar="D:\MobileReportApp\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.0.0\classes.jar"
@@ -16,18 +30,25 @@
         <dex dex="D:\MobileReportApp\app\build\intermediates\pre-dexed\debug\classes-ad8114afd2756aa7742664a3ed2f7acde240b621.jar" />
     </item>
     <item
-        jar="D:\MobileReportApp\app\build\intermediates\exploded-aar\com.mikepenz.materialdrawer\library\0.9.5\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="196889103665d7eae17105a5a78f141086044301">
-        <dex dex="D:\MobileReportApp\app\build\intermediates\pre-dexed\debug\classes-b8c6171c8c99187d8aff3aba3a0daf9805097450.jar" />
-    </item>
-    <item
         jar="D:\MobileReportApp\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\libs\internal_impl-22.0.0.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
         <dex dex="D:\MobileReportApp\app\build\intermediates\pre-dexed\debug\internal_impl-22.0.0-22d2131ab758010729508f38c317df96a22517d3.jar" />
+    </item>
+    <item
+        jar="D:\MobileReportApp\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="c976518693e89ad44fbfccfc654941eaec198d08">
+        <dex dex="D:\MobileReportApp\app\build\intermediates\pre-dexed\debug\classes-49065118c91e69f0e83a971db96a89154d6a2eef.jar" />
+    </item>
+    <item
+        jar="D:\MobileReportApp\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="ef5f051e7308febe289dc93c67c5f32785b4260a">
+        <dex dex="D:\MobileReportApp\app\build\intermediates\pre-dexed\debug\classes-25d90d0538afa93a8d695ac69d6e5d77dfcff368.jar" />
     </item>
     <item
         jar="D:\MobileReportApp\app\build\intermediates\exploded-aar\com.mikepenz.iconics\library\0.7.3\classes.jar"
@@ -37,11 +58,130 @@
         <dex dex="D:\MobileReportApp\app\build\intermediates\pre-dexed\debug\classes-6d5dc448aeedf02c845c3210c4eb6932f325f41d.jar" />
     </item>
     <item
+        jar="D:\MobileReportApp\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="41b3870cbe5fa546d8095b5b89d42cb69f3dd175">
+        <dex dex="D:\MobileReportApp\app\build\intermediates\pre-dexed\debug\classes-b6db4600bd16feb935c2306dbb26652a551fcb3a.jar" />
+    </item>
+    <item
+        jar="D:\MobileReportApp\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appstate\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="7ff613bf78ab057293892fdbd4169eda899c89b9">
+        <dex dex="D:\MobileReportApp\app\build\intermediates\pre-dexed\debug\classes-6613a3fefd1f5dbe803e81617cafc9f8e27f46a3.jar" />
+    </item>
+    <item
+        jar="D:\MobileReportApp\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="73ccb92b70112f2e463e415ef8d7275de7da6516">
+        <dex dex="D:\MobileReportApp\app\build\intermediates\pre-dexed\debug\classes-f986b8645905f64e42d3edab978994806e8dd1dc.jar" />
+    </item>
+    <item
         jar="D:\MobileReportApp\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
         <dex dex="D:\MobileReportApp\app\build\intermediates\pre-dexed\debug\classes-26fb43d503bcd55495befc080b3ec92632f995ac.jar" />
+    </item>
+    <item
+        jar="D:\MobileReportApp\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="fb04b12526b0073c7fb1ebb70c5842d82ee95596">
+        <dex dex="D:\MobileReportApp\app\build\intermediates\pre-dexed\debug\classes-69d0a7e51b8586f239d9e8331eb81226cc425b11.jar" />
+    </item>
+    <item
+        jar="D:\sdk\extras\android\m2repository\com\android\support\support-annotations\22.0.0\support-annotations-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="D:\MobileReportApp\app\build\intermediates\pre-dexed\debug\support-annotations-22.0.0-80f931b3b46d1910cf722fa387aa37f2729c9eeb.jar" />
+    </item>
+    <item
+        jar="D:\MobileReportApp\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="055783146ba9654a725442563be78cad303aad1f">
+        <dex dex="D:\MobileReportApp\app\build\intermediates\pre-dexed\debug\classes-ebe6b20ef5dd514e4e25dd137614290bdb1f4f50.jar" />
+    </item>
+    <item
+        jar="D:\MobileReportApp\app\build\intermediates\exploded-aar\com.mikepenz.materialdrawer\library\0.9.5\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="196889103665d7eae17105a5a78f141086044301">
+        <dex dex="D:\MobileReportApp\app\build\intermediates\pre-dexed\debug\classes-b8c6171c8c99187d8aff3aba3a0daf9805097450.jar" />
+    </item>
+    <item
+        jar="D:\MobileReportApp\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e3d791b42eaa90416cd0b2d2e608092794a3baa4">
+        <dex dex="D:\MobileReportApp\app\build\intermediates\pre-dexed\debug\classes-2ceebdb83b8a2ce1d1b2f92aa7394fc9cab604e0.jar" />
+    </item>
+    <item
+        jar="D:\MobileReportApp\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="1c5a76debf0c2857ccad422c4a80ed785982f8df">
+        <dex dex="D:\MobileReportApp\app\build\intermediates\pre-dexed\debug\classes-2361754338213a1d86c667d700c67a0c5ebf774b.jar" />
+    </item>
+    <item
+        jar="D:\MobileReportApp\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a96b762bde4139de855735f175ec4d17dca55a6d">
+        <dex dex="D:\MobileReportApp\app\build\intermediates\pre-dexed\debug\classes-7fb4bc491ae739d8e6beb3f5e26b2219af305e64.jar" />
+    </item>
+    <item
+        jar="D:\MobileReportApp\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="29fd6d3794b71491c2789708cd8d03c71feb8954">
+        <dex dex="D:\MobileReportApp\app\build\intermediates\pre-dexed\debug\classes-37e8430b0c54f7788e37f4f33d3d58ea9b202266.jar" />
+    </item>
+    <item
+        jar="D:\MobileReportApp\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="9224bc4c54ba95147c7eabd874573763c07cb6be">
+        <dex dex="D:\MobileReportApp\app\build\intermediates\pre-dexed\debug\classes-2fdd55155ff448a1773a1f3b0b11fdaddca02347.jar" />
+    </item>
+    <item
+        jar="D:\MobileReportApp\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4cd0b093824b3228fffc21ea369b98d0b1db6566">
+        <dex dex="D:\MobileReportApp\app\build\intermediates\pre-dexed\debug\classes-db55bb3721bfe9293a9c7caf0acb9430e3b5be75.jar" />
+    </item>
+    <item
+        jar="D:\MobileReportApp\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4c93d99d454c975536bbe3b42283eee847f03ea3">
+        <dex dex="D:\MobileReportApp\app\build\intermediates\pre-dexed\debug\classes-dcefa9907068131469d1ae9d5b6700496769a889.jar" />
+    </item>
+    <item
+        jar="D:\MobileReportApp\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="0e8228b4bc69c6a2c8d7c18498a77e53417d2574">
+        <dex dex="D:\MobileReportApp\app\build\intermediates\pre-dexed\debug\classes-fdd9a163874bb00426fb17c7856f2268d5026ce5.jar" />
+    </item>
+    <item
+        jar="C:\Users\Лена\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="D:\MobileReportApp\app\build\intermediates\pre-dexed\debug\picasso-2.5.2-0e6faa5be9794c6bf7c2ec117feab8fd3ab6254f.jar" />
+    </item>
+    <item
+        jar="D:\MobileReportApp\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\7.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="3c0b099f9de16b265ecd6122fcb603e7d0d29f90">
+        <dex dex="D:\MobileReportApp\app\build\intermediates\pre-dexed\debug\classes-fc841feddac7fbcd8b6388ca4a1c731c995533aa.jar" />
     </item>
 
 </items>

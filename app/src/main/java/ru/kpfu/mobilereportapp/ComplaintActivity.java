@@ -70,6 +70,18 @@ public class ComplaintActivity extends ActionBarActivity {
 
         );
 
+        ImageButton buttonSort = (ImageButton) findViewById(R.id.imageButtonSort);
+        buttonSort.setOnClickListener(new View.OnClickListener()
+
+                                      {
+                                          public void onClick(View v) {
+                                              Intent intent = new Intent(ComplaintActivity.this, GeoMapsActivity.class);
+                                              startActivity(intent);
+                                          }
+                                      }
+
+        );
+
         NavigationDrawerComplaint drawerComplaint = new NavigationDrawerComplaint(drawerResult, this);
         // Инициализируем Navigation Drawer
         drawerResult = drawerComplaint.init();

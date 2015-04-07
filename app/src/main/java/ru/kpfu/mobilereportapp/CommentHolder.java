@@ -18,6 +18,13 @@ public class CommentHolder {
         //FIXME Временно
         list.add(getModel("Иванов Иван", "1.04.2015", "Ололо"));
         list.add(getModel("Петров Женя", "3.04.2015", "Ололо"));
+        list.add(getModel("Иванов Иван", "1.04.2015", "Ололо"));
+        list.add(getModel("Петров Женя", "3.04.2015", "Ололо"));
+        list.add(getModel("Иванов Иван", "1.04.2015", "Ололо"));
+        list.add(getModel("Петров Женя", "3.04.2015", "Ололо"));
+        list.add(getModel("Иванов Иван", "1.04.2015", "Ололо"));
+        list.add(getModel("Петров Женя", "3.04.2015", "Ололо"));
+
         return list;
     }
 

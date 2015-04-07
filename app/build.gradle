@@ -5,7 +5,7 @@ android {
     buildToolsVersion "21.1.2"
     defaultConfig {
         applicationId "ru.kpfu.mobilereportapp"
-        minSdkVersion 14
+        minSdkVersion 17
         targetSdkVersion 21
         versionCode 1
         versionName "1.0"
@@ -27,4 +27,6 @@ dependencies {
     compile('com.mikepenz.materialdrawer:library:0.9.5@aar') {
         transitive = true
     }
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.google.android.gms:play-services:7.0.0'
 }

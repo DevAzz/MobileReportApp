@@ -1,48 +1,56 @@
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/scrollView2"
-    android:layout_gravity="center"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:id="@+id/scrollView2">
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageView
+    <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:id="@+id/imageViewComplaint"
                 android:layout_gravity="top"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:src="@drawable/answer" />
+                android:src="@drawable/answer"
+        android:layout_weight="1" />
 
                 <RatingBar
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/ratingBar"
-                    android:layout_gravity="center_horizontal" />
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1" />
 
-            <TextView
+    <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Medium Text"
                 android:id="@+id/textViewDate"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp" />
+                android:layout_marginBottom="10dp"
+        android:layout_weight="1" />
 
-            <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/editTextComplaint"
-                    android:layout_marginTop="10dp" />
-
-            <ListView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:id="@+id/listViewComments" />
-
-        </LinearLayout>
+    <EditText
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/editTextComplaint"
+      android:layout_marginTop="10dp"
+      android:scrollbars = "vertical"
+        android:layout_weight="1" />
+</LinearLayout>
 </ScrollView>
+    <ListView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:id="@+id/listViewComments"
+       android:layout_weight="2" />
+ </LinearLayout>
