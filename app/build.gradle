@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'keymob'
+            keyPassword 'keypassazz'
+            storeFile file('C:/Users/Лена/mobilereport.keystore')
+            storePassword 'azz121121'
+        }
+    }
     compileSdkVersion 21
     buildToolsVersion "21.1.2"
     defaultConfig {
