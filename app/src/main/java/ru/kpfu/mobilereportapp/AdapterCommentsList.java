@@ -30,7 +30,7 @@ public class AdapterCommentsList extends ArrayAdapter<CommentModel> {
         View view = null;
         if (convertView == null) {
             LayoutInflater inflater = context.getLayoutInflater();
-            view = inflater.inflate(R.layout.comment_layout, null);
+            view = inflater.inflate(R.layout.comment_layout2, null);
             final ViewHolder viewHolder = new ViewHolder();
             viewHolder.imageViewAvatar = (ImageView) view.findViewById(R.id.imageViewAvatar);
             viewHolder.nameUser = (TextView) view.findViewById(R.id.textViewUser);

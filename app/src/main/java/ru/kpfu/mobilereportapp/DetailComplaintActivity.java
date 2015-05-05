@@ -1,14 +1,15 @@
 package ru.kpfu.mobilereportapp;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.mikepenz.materialdrawer.Drawer;
@@ -16,29 +17,37 @@ import com.mikepenz.materialdrawer.Drawer;
 
 public class DetailComplaintActivity extends ActionBarActivity {
 
+    private static final String TAG = "DetailComplaintActivity";
     private Drawer.Result drawerResult = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail_complaint);
+        setContentView(R.layout.activity_detail_complaint2);
 
         NavigationDrawerComplaint drawerComplaint = new NavigationDrawerComplaint(drawerResult, this);
         // Инициализируем Navigation Drawer
         drawerResult=drawerComplaint.init();
 
         ImageView imageView = (ImageView) findViewById(R.id.imageViewAvatar);
-        RatingBar ratingBar = (RatingBar) findViewById((R.id.ratingBar));
-        EditText editText = (EditText) findViewById(R.id.editTextComplaint);
         TextView textViewDate = (TextView) findViewById(R.id.textViewDate);
         ListView listViewComments = (ListView) findViewById(R.id.listViewComments);
+        TextView textViewAuthor = (TextView) findViewById(R.id.textViewAuthor);
 
         CommentHolder comment = new CommentHolder();
 
         ArrayAdapter<CommentModel> adapter = new AdapterCommentsList(this,
                 comment.getListModel());
-        listViewComments.setAdapter(adapter);
 
+
+
+        LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View header = inflater.inflate(R.layout.activity_detail_complaint_list_view_header, null);
+        TextView textViewText = (TextView) header.findViewById(R.id.textViewText);
+        textViewText.setText("dfgfgdgdgdfeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
+        listViewComments.addHeaderView(header);
+
+        listViewComments.setAdapter(adapter);
     }
 
 

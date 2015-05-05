@@ -1,9 +1,9 @@
 package ru.kpfu.mobilereportapp;
 
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,69 +22,70 @@ import java.util.List;
 public class ComplaintActivity extends ActionBarActivity {
 
     private Drawer.Result drawerResult = null;
+    FragmentManager manager;//  = getFragmentManager();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        manager  = getFragmentManager();
         setContentView(R.layout.activity_complaint);
+        try {
+            final ListView listview = (ListView) findViewById(R.id.listView);
+            ArrayAdapter<ComplaintModel> adapter = new AdapterComplaintList(this,
+                    getModel());
+            final DialogSort dlgSort = new DialogSort();
 
-        final ListView listview = (ListView) findViewById(R.id.listView);
-        ArrayAdapter<ComplaintModel> adapter = new AdapterComplaintList(this,
-                getModel());
-        listview.setAdapter(adapter);
-        listview.setOnItemClickListener(new OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
-                Intent intent = new Intent(ComplaintActivity.this, DetailComplaintActivity.class);
-                startActivity(intent);
-                Log.e("LOG", "itemClick: position = " + position + ", id = "
-                        + id);
-            }
-        });
-        listview.setOnItemSelectedListener(new OnItemSelectedListener() {
-            public void onItemSelected(AdapterView<?> parent, View view,
-                                       int position, long id) {
-                Log.e("LOG", "itemSelect: position = " + position + ", id = "
-                        + id);
-            }
+            listview.setAdapter(adapter);
+            listview.setOnItemClickListener(new OnItemClickListener() {
+                public void onItemClick(AdapterView<?> parent, View view,
+                                        int position, long id) {
+                    Intent intent = new Intent(ComplaintActivity.this, DetailComplaintActivity.class);
+                    startActivity(intent);
+                }
+            });
+            listview.setOnItemSelectedListener(new OnItemSelectedListener() {
+                public void onItemSelected(AdapterView<?> parent, View view,
+                                           int position, long id) {
+                }
 
-            public void onNothingSelected(AdapterView<?> parent) {
-                Log.d("LOG", "itemSelect: nothing");
-            }
-        });
-        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayShowHomeEnabled(false); //не показываем иконку приложения
-        actionBar.setDisplayShowTitleEnabled(false); // и заголовок тоже прячем
-        actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setCustomView(R.layout.custom_actionbar);
-        ImageButton buttonAddComplaint = (ImageButton) findViewById(R.id.imageButtonAddComplaint);
+                public void onNothingSelected(AdapterView<?> parent) {
+                }
+            });
+            android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+            actionBar.setDisplayShowHomeEnabled(false); //не показываем иконку приложения
+            actionBar.setDisplayShowTitleEnabled(false); // и заголовок тоже прячем
+            actionBar.setDisplayShowCustomEnabled(true);
+            actionBar.setCustomView(R.layout.custom_actionbar);
+            ImageButton buttonAddComplaint = (ImageButton) findViewById(R.id.imageButtonAddComplaint);
 
-        buttonAddComplaint.setOnClickListener(new View.OnClickListener()
+            buttonAddComplaint.setOnClickListener(new View.OnClickListener()
 
-                                              {
-                                                  public void onClick(View v) {
-                                                      Intent intent = new Intent(ComplaintActivity.this, AddComplaintActivity.class);
-                                                      startActivity(intent);
+                                                  {
+                                                      public void onClick(View v) {
+                                                          Intent intent = new Intent(ComplaintActivity.this, AddComplaintActivity.class);
+                                                          startActivity(intent);
+                                                      }
                                                   }
+
+            );
+
+            ImageButton buttonSort = (ImageButton) findViewById(R.id.imageButtonSort);
+            buttonSort.setOnClickListener(new View.OnClickListener()
+
+                                          {
+                                              public void onClick(View v) {
+                                                      dlgSort.show(manager, DialogSort.TAG);
                                               }
-
-        );
-
-        ImageButton buttonSort = (ImageButton) findViewById(R.id.imageButtonSort);
-        buttonSort.setOnClickListener(new View.OnClickListener()
-
-                                      {
-                                          public void onClick(View v) {
-                                              Intent intent = new Intent(ComplaintActivity.this, GeoMapsActivity.class);
-                                              startActivity(intent);
                                           }
-                                      }
 
-        );
+            );
 
-        NavigationDrawerComplaint drawerComplaint = new NavigationDrawerComplaint(drawerResult, this);
-        // Инициализируем Navigation Drawer
-        drawerResult = drawerComplaint.init();
+            NavigationDrawerComplaint drawerComplaint = new NavigationDrawerComplaint(drawerResult, this);
+            // Инициализируем Navigation Drawer
+            drawerResult = drawerComplaint.init();
+        } catch (Throwable e) {
+            e.printStackTrace();
+        }
     }
 
     private List<ComplaintModel> getModel() {

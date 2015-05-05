@@ -55,6 +55,7 @@ public class NavigationDrawerComplaint {
                         new PrimaryDrawerItem().withName(R.string.drawer_item_user).withIcon(FontAwesome.Icon.faw_user),
                         new PrimaryDrawerItem().withName(R.string.drawer_item_home).withIcon(FontAwesome.Icon.faw_home),
                         new PrimaryDrawerItem().withName(R.string.drawer_item_custom).withIcon(FontAwesome.Icon.faw_comment).withBadge("over 9000").withIdentifier(9000),
+                        new PrimaryDrawerItem().withName(R.string.drawer_item_all).withIcon(FontAwesome.Icon.faw_comment).withBadge("over 9000").withIdentifier(9000),
                         new SectionDrawerItem().withName(R.string.drawer_item_settings),
                         new SecondaryDrawerItem().withName(R.string.drawer_item_settings).withIcon(FontAwesome.Icon.faw_cog),
                         new SecondaryDrawerItem().withName(R.string.drawer_item_help).withIcon(FontAwesome.Icon.faw_heart),
@@ -86,7 +87,11 @@ public class NavigationDrawerComplaint {
                             Intent intent = new Intent(_activity, UserComplaintActivity.class);
                             _activity.startActivity(intent);
                         }
-                        if (position == 7) {
+                        if (position == 4) {
+                            Intent intent = new Intent(_activity, ComplaintActivity.class);
+                            _activity.startActivity(intent);
+                        }
+                        if (position == 8) {
                             //FIXME Сделать выход
                         }
                         if (drawerItem instanceof Badgeable) {

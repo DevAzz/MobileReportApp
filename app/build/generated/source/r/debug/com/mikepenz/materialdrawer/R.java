@@ -373,7 +373,7 @@ public final class R {
 		public static final int abc_textfield_search_activated_mtrl_alpha = 0x7f020034;
 		public static final int abc_textfield_search_default_mtrl_alpha = 0x7f020035;
 		public static final int abc_textfield_search_material = 0x7f020036;
-		public static final int ic_launcher = 0x7f020054;
+		public static final int ic_launcher = 0x7f020056;
 	}
 	public static final class id {
 		public static final int action_bar = 0x7f0a0046;
@@ -391,17 +391,17 @@ public final class R {
 		public static final int action_mode_close_button = 0x7f0a0035;
 		public static final int activity_chooser_view_content = 0x7f0a0036;
 		public static final int always = 0x7f0a001c;
-		public static final int badge = 0x7f0a006b;
+		public static final int badge = 0x7f0a0076;
 		public static final int beginning = 0x7f0a0014;
 		public static final int checkbox = 0x7f0a003e;
 		public static final int collapseActionView = 0x7f0a001d;
-		public static final int content_layout = 0x7f0a006a;
+		public static final int content_layout = 0x7f0a0075;
 		public static final int decor_content_parent = 0x7f0a0044;
 		public static final int default_activity_button = 0x7f0a0039;
 		public static final int dialog = 0x7f0a0021;
 		public static final int disableHome = 0x7f0a000c;
-		public static final int divider = 0x7f0a006d;
-		public static final int drawer_layout = 0x7f0a0069;
+		public static final int divider = 0x7f0a0078;
+		public static final int drawer_layout = 0x7f0a0074;
 		public static final int dropdown = 0x7f0a0022;
 		public static final int edit_query = 0x7f0a0048;
 		public static final int end = 0x7f0a0015;
@@ -415,7 +415,7 @@ public final class R {
 		public static final int listMode = 0x7f0a0009;
 		public static final int list_item = 0x7f0a003a;
 		public static final int middle = 0x7f0a0016;
-		public static final int name = 0x7f0a006c;
+		public static final int name = 0x7f0a0077;
 		public static final int never = 0x7f0a001f;
 		public static final int none = 0x7f0a000e;
 		public static final int normal = 0x7f0a000a;
@@ -436,7 +436,7 @@ public final class R {
 		public static final int showCustom = 0x7f0a000f;
 		public static final int showHome = 0x7f0a0010;
 		public static final int showTitle = 0x7f0a0011;
-		public static final int slider_layout = 0x7f0a006e;
+		public static final int slider_layout = 0x7f0a0079;
 		public static final int split_action_bar = 0x7f0a0007;
 		public static final int submit_area = 0x7f0a0051;
 		public static final int tabMode = 0x7f0a000b;
@@ -472,15 +472,15 @@ public final class R {
 		public static final int abc_search_dropdown_item_icons_2line = 0x7f040013;
 		public static final int abc_search_view = 0x7f040014;
 		public static final int abc_simple_dropdown_hint = 0x7f040015;
-		public static final int drawer = 0x7f04001f;
-		public static final int drawer_item_divider = 0x7f040021;
-		public static final int drawer_item_footer = 0x7f040022;
-		public static final int drawer_item_header = 0x7f040023;
-		public static final int drawer_item_primary = 0x7f040024;
-		public static final int drawer_item_secondary = 0x7f040025;
-		public static final int drawer_item_section = 0x7f040026;
-		public static final int drawer_slider = 0x7f040027;
-		public static final int support_simple_spinner_dropdown_item = 0x7f040029;
+		public static final int drawer = 0x7f040023;
+		public static final int drawer_item_divider = 0x7f040025;
+		public static final int drawer_item_footer = 0x7f040026;
+		public static final int drawer_item_header = 0x7f040027;
+		public static final int drawer_item_primary = 0x7f040028;
+		public static final int drawer_item_secondary = 0x7f040029;
+		public static final int drawer_item_section = 0x7f04002a;
+		public static final int drawer_slider = 0x7f04002b;
+		public static final int support_simple_spinner_dropdown_item = 0x7f040030;
 	}
 	public static final class string {
 		public static final int abc_action_bar_home_description = 0x7f0c0000;
@@ -503,7 +503,7 @@ public final class R {
 		public static final int define_AndroidIconics = 0x7f0c003d;
 		public static final int define_materialdrawer = 0x7f0c003e;
 		public static final int drawer_close = 0x7f0c003f;
-		public static final int drawer_open = 0x7f0c0046;
+		public static final int drawer_open = 0x7f0c0047;
 		public static final int library_AndroidIconics_author = 0x7f0c004a;
 		public static final int library_AndroidIconics_authorWebsite = 0x7f0c004b;
 		public static final int library_AndroidIconics_isOpenSource = 0x7f0c004c;

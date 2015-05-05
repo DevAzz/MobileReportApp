@@ -23,6 +23,7 @@
     <string name="drawer_item_user">Дефолтный Юзер</string>
     <string name="drawer_item_home">группа 11-104</string>
     <string name="drawer_item_custom">Мои жалобы</string>
+    <string name="drawer_item_all">Все жалобы</string>
     <string name="drawer_item_settings">Настройки</string>
     <string name="drawer_item_help">Помощь</string>
     <string name="drawer_item_out">Выход</string>
@@ -36,7 +37,6 @@
     <string name="cannot">Cannot</string>
     <string name="title_activity_auto">AutoActivity</string>
 
-    <string name="hello_world">Hello world!</string>
     <string name="title_activity_log_in">LogInActivity</string>
 
     <string name="buttonLogIn"> Войти </string>
@@ -47,6 +47,7 @@
     <string name="empty">Нет данных</string>
     <string name="title_activity_user_complaint">UserComplaintActivity</string>
 
+    <!-- Диалог выбора варианта загрузки изображения -->
     <string name="exit">Способ загрузки</string>
     <string name="save_data">Выберете способ загрузки изображения</string>
     <string name="yes">Камера</string>
@@ -54,5 +55,17 @@
     <string name="cancel">Отмена</string>
     <string name="saved">Сохранено</string>
     <string name="title_activity_geo_maps">GeoMapsActivity</string>
+
+    <!-- Диалог выбора варианта сортировки -->
+    <string name="sortTitle">Сортировать</string>
+    <string name="sortBuilding">Здание</string>
+    <string name="sortData">Дата</string>
+    <string name="sortCount">Количество</string>
+    <string name="sortStatus">Статус</string>
+    <string name="sortStatusAgreed">Решено</string>
+    <string name="sortStatusDuring">В процессе</string>
+    <string name="sortStatusDenied">Отказано</string>
+    <string name="sortFloor">Этаж</string>
+    <string name="sortButton">Ok</string>
 
 </resources>
