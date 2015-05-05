@@ -92,7 +92,6 @@ public class NavigationDrawerComplaint {
                             _activity.startActivity(intent);
                         }
                         if (position == 8) {
-                            //FIXME Сделать выход
                         }
                         if (drawerItem instanceof Badgeable) {
                             Badgeable badgeable = (Badgeable) drawerItem;
