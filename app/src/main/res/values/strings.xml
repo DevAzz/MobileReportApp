@@ -68,4 +68,7 @@
     <string name="sortFloor">Этаж</string>
     <string name="sortButton">Ok</string>
 
+    <!-- Активити с картой -->
+    <string name="buttonSelectBuilding">"Выбрать здание"</string>
+
 </resources>
