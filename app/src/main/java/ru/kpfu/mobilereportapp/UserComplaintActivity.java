@@ -1,8 +1,9 @@
 package ru.kpfu.mobilereportapp;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,23 +13,40 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
+import com.google.android.gms.maps.model.LatLng;
 import com.mikepenz.materialdrawer.Drawer;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import ru.kpfu.mobilereportapp.Entity.BuildingEntity;
+import ru.kpfu.mobilereportapp.Entity.ComplaintEntity;
+import ru.kpfu.mobilereportapp.Entity.UserEntity;
 
 
 public class UserComplaintActivity extends ActionBarActivity {
 
     private Drawer.Result drawerResult = null;
 
+    public static final String APP_PREFERENCES = "mysettings";
+
+    UserEntity user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_complaint);
 
+        user = getIntent().getParcelableExtra(UserEntity.class.getCanonicalName());
+
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayShowHomeEnabled(false); //не показываем иконку приложения
+        actionBar.setDisplayShowTitleEnabled(false); // и заголовок тоже прячем
+        actionBar.setDisplayShowCustomEnabled(true);
+        actionBar.setCustomView(R.layout.custom_actionbar);
+
         final ListView listview = (ListView) findViewById(R.id.listView);
-        ArrayAdapter<ComplaintModel> adapter = new AdapterComplaintList(this,
+        ArrayAdapter<ComplaintEntity> adapter = new AdapterComplaintList(this,
                 getModel());
         listview.setAdapter(adapter);
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -51,11 +69,7 @@ public class UserComplaintActivity extends ActionBarActivity {
                 Log.d("LOG", "itemSelect: nothing");
             }
         });
-        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayShowHomeEnabled(false); //не показываем иконку приложения
-        actionBar.setDisplayShowTitleEnabled(false); // и заголовок тоже прячем
-        actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setCustomView(R.layout.custom_actionbar);
+
         ImageButton buttonAddComplaint = (ImageButton) findViewById(R.id.imageButtonAddComplaint);
 
         buttonAddComplaint.setOnClickListener(new View.OnClickListener()
@@ -68,22 +82,27 @@ public class UserComplaintActivity extends ActionBarActivity {
                                               }
 
         );
-
-        NavigationDrawerComplaint drawerComplaint = new NavigationDrawerComplaint(drawerResult, this);
-        // Инициализируем Navigation Drawer
-        drawerResult = drawerComplaint.init();
     }
 
-    private List<ComplaintModel> getModel() {
-        List<ComplaintModel> list = new ArrayList<>();
+    private List<ComplaintEntity> getModel() {
+        List<ComplaintEntity> list = new ArrayList<>();
+        List<CommentModel> comments = new ArrayList<>();
+        comments.add(new CommentModel(user.getNameUser(), "ывмымыв", "24.05.2015"));
+        comments.add(new CommentModel(user.getNameUser(), "sbvsbsdb", "24.05.2015"));
         //FIXME Временно
-        list.add(get("Текст жалобы", "В процессе", 0, 0));
-        list.add(get("Текст жалобы2", "Решено", 1, 1));
+        list.add(get(0,"", "Жалоба", comments, "sfbvsdvsvsvdscvdsvsbfbsbd", " Решено", "24.05.2015", user, new BuildingEntity("Учебное здание №01 (Главный корпус университета)","г.Казань, ул.Кремлевская, д.18", new LatLng(55.790447, 49.121421)), 100));
+        list.add(get(0,"", "Жалоба", comments, "sfbvsdvsvsvdscvdsvsbfbsbd", " Решено", "24.05.2015", user, new BuildingEntity("Учебное здание №01 (Главный корпус университета)","г.Казань, ул.Кремлевская, д.18", new LatLng(55.790447, 49.121421)), 100));
+        list.add(get(0,"", "Жалоба", comments, "sfbvsdvsvsvdscvdsvsbfbsbd", " Решено", "24.05.2015", user, new BuildingEntity("Учебное здание №01 (Главный корпус университета)","г.Казань, ул.Кремлевская, д.18", new LatLng(55.790447, 49.121421)), 100));
+        list.add(get(0,"", "Жалоба", comments, "sfbvsdvsvsvdscvdsvsbfbsbd", " Решено", "24.05.2015", user, new BuildingEntity("Учебное здание №01 (Главный корпус университета)","г.Казань, ул.Кремлевская, д.18", new LatLng(55.790447, 49.121421)), 100));
+        list.add(get(0,"", "Жалоба", comments, "sfbvsdvsvsvdscvdsvsbfbsbd", " Решено", "24.05.2015", user, new BuildingEntity("Учебное здание №01 (Главный корпус университета)","г.Казань, ул.Кремлевская, д.18", new LatLng(55.790447, 49.121421)), 100));
+        list.add(get(0,"", "Жалоба", comments, "sfbvsdvsvsvdscvdsvsbfbsbd", " Решено", "24.05.2015", user, new BuildingEntity("Учебное здание №01 (Главный корпус университета)","г.Казань, ул.Кремлевская, д.18", new LatLng(55.790447, 49.121421)), 100));
+        list.add(get(0,"", "Жалоба", comments, "sfbvsdvsvsvdscvdsvsbfbsbd", " Решено", "24.05.2015", user, new BuildingEntity("Учебное здание №01 (Главный корпус университета)","г.Казань, ул.Кремлевская, д.18", new LatLng(55.790447, 49.121421)), 100));
+        list.add(get(0,"", "Жалоба", comments, "sfbvsdvsvsvdscvdsvsbfbsbd", " Решено", "24.05.2015", user, new BuildingEntity("Учебное здание №01 (Главный корпус университета)","г.Казань, ул.Кремлевская, д.18", new LatLng(55.790447, 49.121421)), 100));
         return list;
     }
 
-    private ComplaintModel get(String aTextComplaint, String aStatus, int aCountComments, int aRating) {
-        return new ComplaintModel(aTextComplaint, aStatus, aCountComments, aRating);
+    private ComplaintEntity get(int id, String photo, String title, List<CommentModel> comments, String description, String status, String date, UserEntity owner, BuildingEntity location, int rating) {
+        return new ComplaintEntity(id, photo, title, comments, description, status, date, owner, location, rating);
     }
 
 
@@ -115,5 +134,15 @@ public class UserComplaintActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        SharedPreferences sPref = getSharedPreferences(APP_PREFERENCES , MODE_PRIVATE);
+        NavigationDrawerComplaint drawerComplaint = new NavigationDrawerComplaint(drawerResult, this, user, sPref);
+        // Инициализируем Navigation Drawer
+        drawerResult = drawerComplaint.init();
     }
 }

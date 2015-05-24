@@ -1,22 +1,34 @@
 package ru.kpfu.mobilereportapp;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.mikepenz.iconics.typeface.FontAwesome;
 import com.mikepenz.materialdrawer.Drawer;
+import com.mikepenz.materialdrawer.accountswitcher.AccountHeader;
 import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
+import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.SectionDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.Badgeable;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
+import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import com.mikepenz.materialdrawer.model.interfaces.Nameable;
+import com.mikepenz.materialdrawer.util.DrawerImageLoader;
+import com.squareup.picasso.Picasso;
+
+import ru.kpfu.mobilereportapp.Entity.UserEntity;
 
 /**
  * Боковая навигационная панель
@@ -24,11 +36,24 @@ import com.mikepenz.materialdrawer.model.interfaces.Nameable;
  */
 public class NavigationDrawerComplaint {
 
+    private static final String DEFAULT_PATH = "android.resource://ru.kpfu.mobilereportapp/drawable/answer";
+
+    private static final String PATH_KEY = "photo_path";
+
+    public static final String APP_PREFERENCES = "mysettings";
+
     /** Экземпляр класса Drawer.Result */
     private Drawer.Result _drawer;
 
     /** активити, где используется панель */
     private Activity _activity;
+
+    SharedPreferences sPref;
+
+    /**
+     * Пользователь
+     */
+    private UserEntity user;
 
     /**
      * Конструктор боковой панели
@@ -41,16 +66,60 @@ public class NavigationDrawerComplaint {
     }
 
     /**
+     * Конструктор боковой панели
+     * @param aDrawer Экземпляр класса Drawer.Result
+     * @param aActivity активити, где используется панель
+     */
+    public NavigationDrawerComplaint (Drawer.Result aDrawer, Activity aActivity, UserEntity user, SharedPreferences sPref) {
+        _drawer = aDrawer;
+        _activity = aActivity;
+        this.user = user;
+        this.sPref = sPref;
+    }
+
+    /**
      * Инициализируем Navigation Drawer
      * @return поле _drawer
      */
     public Drawer.Result init() {
+        com.mikepenz.materialdrawer.util.DrawerImageLoader.init(new DrawerImageLoader.IDrawerImageLoader() {
+            @Override
+            public void set(ImageView imageView, Uri uri, Drawable placeholder) {
+                Picasso.with(imageView.getContext()).load(uri).placeholder(placeholder).into(imageView);
+            }
+
+            @Override
+            public void cancel(ImageView imageView) {
+                Picasso.with(imageView.getContext()).cancelRequest(imageView);
+            }
+
+            @Override
+            public Drawable placeholder(Context ctx) {
+                return null;
+            }
+        });
+        String userPic = "";
+        if (null != sPref) {
+            userPic = sPref.getString(PATH_KEY, "");
+        }
+
+        IProfile profile = new ProfileDrawerItem().withName(user.getNameUser()).withEmail(user.getFacultyUser()).withIcon(userPic);
+        AccountHeader.Result headerResult = new AccountHeader()
+                .withActivity(_activity)
+                .withHeaderBackground(R.drawable.header)
+                .addProfiles(profile)
+                .withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener() {
+                    @Override
+                    public boolean onProfileChanged(View view, IProfile profile, boolean currentProfile) {
+                        return false;
+                    }
+                })
+                .build();
         // Инициализируем Navigation Drawer
         _drawer = new Drawer()
                 .withActivity(_activity)
-                        //.withToolbar(toolbar)
                 .withActionBarDrawerToggle(true)
-                .withHeader(R.layout.drawer_header)
+                .withAccountHeader(headerResult)
                 .addDrawerItems(
                         new PrimaryDrawerItem().withName(R.string.drawer_item_user).withIcon(FontAwesome.Icon.faw_user),
                         new PrimaryDrawerItem().withName(R.string.drawer_item_home).withIcon(FontAwesome.Icon.faw_home),
@@ -74,6 +143,11 @@ public class NavigationDrawerComplaint {
                     @Override
                     public void onDrawerClosed(View drawerView) {
                     }
+
+                    @Override
+                    public void onDrawerSlide(View view, float v) {
+
+                    }
                 })
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
@@ -83,12 +157,19 @@ public class NavigationDrawerComplaint {
                             Toast.makeText(_activity, _activity.getString(((Nameable) drawerItem).getNameRes()), Toast.LENGTH_SHORT).show();
                             Log.e("LOG", String.valueOf(position));
                         }
-                        if (position == 3) {
+                        if (position == 2) {
                             Intent intent = new Intent(_activity, UserComplaintActivity.class);
+                            intent.putExtra(UserEntity.class.getCanonicalName(), user);
                             _activity.startActivity(intent);
                         }
-                        if (position == 4) {
+                        if (position == 3) {
                             Intent intent = new Intent(_activity, ComplaintActivity.class);
+                            intent.putExtra(UserEntity.class.getCanonicalName(), user);
+                            _activity.startActivity(intent);
+                        }
+                        if (position == 5) {
+                            Intent intent = new Intent(_activity, SettingActivity.class);
+                            intent.putExtra(UserEntity.class.getCanonicalName(), user);
                             _activity.startActivity(intent);
                         }
                         if (position == 8) {
@@ -119,6 +200,8 @@ public class NavigationDrawerComplaint {
                     }
                 })
                 .build();
+
         return _drawer;
     }
+
 }

@@ -12,10 +12,14 @@
 
     <string name="action_settings">Settings</string>
 
+    <!-- Активити жалоб -->
     <string name="textViewTextComplaint">Дефолтный текст жалобы</string>
     <string name="textViewStatus">дефолтный статус</string>
     <string name="textViewCountComments">дефолтное кол-во комментариев</string>
     <string name="textViewRating">дефолтный рейтинг</string>
+    <string name="textViewOwner">дефолтный автор</string>
+    <string name="textViewTitle">дефолтный заголовок</string>
+    <string name="textViewDate">дефолтная дата</string>
 
     <string name="textViewNameUser">Дефолтный user</string>
     <string name="buttonMyComplaint">Мои жалобы</string>
@@ -70,5 +74,13 @@
 
     <!-- Активити с картой -->
     <string name="buttonSelectBuilding">"Выбрать здание"</string>
+
+    <!-- Настройки -->
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="preferencesUserHeader">"Настройки"</string>
+    <string name="textPreferencesUserPhoto">"Фото пользователя"</string>
+    <string name="buttonPreferencesUserPhoto">"Загрузить фото"</string>
+
+
 
 </resources>

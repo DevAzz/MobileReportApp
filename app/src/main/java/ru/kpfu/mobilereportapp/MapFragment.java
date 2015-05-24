@@ -1,5 +1,6 @@
 package ru.kpfu.mobilereportapp;
 
+import android.content.Intent;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.os.Handler;
@@ -27,6 +28,9 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.HashMap;
 import java.util.Map;
 
+import ru.kpfu.mobilereportapp.Entity.BuildingEntity;
+import ru.kpfu.mobilereportapp.Entity.UserEntity;
+
 import static android.view.View.INVISIBLE;
 import static android.view.View.OnClickListener;
 import static android.view.View.VISIBLE;
@@ -42,13 +46,41 @@ public class MapFragment
 
     private Marker mainBuildingMarker;
     private Marker building14Marker;
-    final String TAG = "myLogs";
+    final String TAG = "MapFragment";
+    public static String KEY = "Activity";
     private LatLng mainBuild = new LatLng(55.790447, 49.121421);
     private LatLng building14 = new LatLng(55.792148, 49.122044);
 
-    private static Building[] BUILDINGS_ARRAY = new Building[]{
-            new Building("Учебное здание №01 (Главный корпус университета)","г.Казань, ул.Кремлевская, д.18", new LatLng(55.790447, 49.121421)),
-            new Building("Учебное здание №14 (Корпус № 2)","г.Казань, ул.Кремлевская, д.35", new LatLng(55.792148, 49.122044)),
+    private static BuildingEntity[] BUILDINGS_ARRAY = new BuildingEntity[]{
+            new BuildingEntity("Учебное здание №01 (Главный корпус университета)","г.Казань, ул.Кремлевская, д.18", new LatLng(55.790447, 49.121421)),
+            new BuildingEntity("Учебное здание №14 (Корпус № 2)","г.Казань, ул.Кремлевская, д.35", new LatLng(55.792148, 49.122044)),
+            new BuildingEntity("Учебное здание №17 (Центр информационных технологий)", "г. Казань, ул.Профессора Нужина, д.1/37", new LatLng(55.792574, 49.124151)),
+            new BuildingEntity("Культурно-спортивный комплекс", "г.Казань, ул.Профессора Нужина, д. 2", new LatLng(55.790511, 49.124151)),
+            new BuildingEntity("Учебное здание №04 (НИ химический институт им.А.М.Бутлерова)", "г.Казань, ул.Кремлевская, д.29/1", new LatLng(55.792526, 49.119803)),
+            new BuildingEntity("Учебное здание №12 (Физический факультет)", "г.Казань, ул.Кремлевская, д.16а", new LatLng(55.791798, 49.117684)),
+            new BuildingEntity("Учебное здание №16 (Химический факультет)", "г.Казань, ул.Лобачевского, д.1/29", new LatLng(55.792498, 49.119800)),
+            new BuildingEntity("Учебное здание №18Б", "г.Казань, ул.Кремлевская/ М.Джалиля/ Рахматуллина, д.6/20/1", new LatLng(55.793319, 49.114815)),
+            new BuildingEntity("Учебное здание №13Б (Геологический корпус, блок Б)", "г.Казань, ул.Кремлевская, д.4/5", new LatLng(55.794142, 49.113774)),
+            new BuildingEntity("Учебное здание №23", "г.Казань, ул.К.Маркса, д.43/10", new LatLng(55.795926, 49.130176)),
+            new BuildingEntity("Учебное здание №30", "г.Казань, ул.Лево-Булачная, д.34", new LatLng(55.790073, 49.109102)),
+            new BuildingEntity("Учебное здание №31", "г.Казань, ул.Мартына Межлаука, д.3/45", new LatLng(55.787438, 49.110212)),
+            new BuildingEntity("Учебное здание №33", "г.Казань, ул.Татарстан, д.2", new LatLng(55.784075, 49.117138)),
+            new BuildingEntity("Учебное здание №22 (Здание учебного корпуса блок В)", "г.Казань, ул.Бутлерова, д.4", new LatLng(55.786894, 49.127238)),
+            new BuildingEntity("Учебное здание №29 (Спортивный корпус)", "г.Казань, ул.Карла Маркса, д.74", new LatLng(55.793938, 49.143653)),
+            new BuildingEntity("Учебное здание №32", "г.Казань, ул.Товарищеская, д.5", new LatLng(55.789687, 49.158542)),
+            new BuildingEntity("Учебное здание №34", "г.Казань, просп.Ибрагимова, д.85А", new LatLng(55.821883, 49.098314)),
+//            new Building("", "", new LatLng()),
+//            new Building("", "", new LatLng()),
+//            new Building("", "", new LatLng()),
+//            new Building("", "", new LatLng()),
+//            new Building("", "", new LatLng()),
+//            new Building("", "", new LatLng()),
+//            new Building("", "", new LatLng()),
+//            new Building("", "", new LatLng()),
+//            new Building("", "", new LatLng()),
+//            new Building("", "", new LatLng()),
+//            new Building("", "", new LatLng()),
+//            new Building("", "", new LatLng()),
     };
 
 
@@ -59,7 +91,7 @@ public class MapFragment
     //длительность анимации перемещения карты
     private static final int ANIMATION_DURATION = 500;
 
-    private Map<Marker, Building> buildingMap;
+    private Map<Marker, BuildingEntity> buildingMap;
 
     //точка на карте, соответственно перемещению которой перемещается всплывающее окно
     private LatLng trackedPosition;
@@ -113,19 +145,24 @@ public class MapFragment
         CameraUpdate cameraUpdate = CameraUpdateFactory.newCameraPosition(cameraPosition);
         map.animateCamera(cameraUpdate);
         map.getUiSettings().setRotateGesturesEnabled(false);
+        map.setMyLocationEnabled(true);
+        map.getUiSettings().setMapToolbarEnabled(true);
+        map.getUiSettings().setZoomControlsEnabled(true);
+        map.getUiSettings().setMyLocationButtonEnabled(true);
+        map.getUiSettings().setCompassEnabled(true);
         map.setOnMapClickListener(this);
         map.setOnMarkerClickListener(this);
 
         map.clear();
         buildingMap.clear();
         BitmapDescriptor icon = BitmapDescriptorFactory.fromResource(R.drawable.pin_shadow);
-        for (Building building : BUILDINGS_ARRAY) {
+        for (BuildingEntity buildingEntity : BUILDINGS_ARRAY) {
             Marker marker = map.addMarker(new MarkerOptions()
-                    .position(building.getPosition())
+                    .position(buildingEntity.getPosition())
                     .title("Title")
                     .snippet("Subtitle")
                     .icon(icon));
-            buildingMap.put(marker, building);
+            buildingMap.put(marker, buildingEntity);
         }
 
         infoWindowContainer = rootView.findViewById(R.id.container_popup);
@@ -163,8 +200,29 @@ public class MapFragment
 
     @Override
     public void onClick(View v) {
+        String whence = getActivity().getIntent().getStringExtra(KEY);
         String name = (String) v.getTag();
         Toast.makeText(this.getActivity(), name, Toast.LENGTH_SHORT).show();
+        if ("AddComplaintActivity".equals(whence)) {
+            Intent intent = new Intent(getActivity(), AddComplaintActivity.class);
+            intent.putExtra(UserEntity.class.getCanonicalName(),  getActivity().getIntent().getParcelableExtra(UserEntity.class.getCanonicalName()));
+            startActivity(intent);
+        } else if ("DialogSort".equals(whence)) {
+            Intent intent = new Intent(getActivity(), ComplaintActivity.class);
+            intent.putExtra(UserEntity.class.getCanonicalName(),  getActivity().getIntent().getParcelableExtra(UserEntity.class.getCanonicalName()));
+            startActivity(intent);
+        }
+
+    }
+
+    private BuildingEntity getBuildingByName (String name) {
+        BuildingEntity building = null;
+        for (BuildingEntity val : BUILDINGS_ARRAY) {
+            if (name.equals(val.getName())) {
+                building = val;
+            }
+        }
+        return building;
     }
 
     @Override
@@ -182,10 +240,10 @@ public class MapFragment
         LatLng newCameraLocation = projection.fromScreenLocation(trackedPoint);
         map.animateCamera(CameraUpdateFactory.newLatLng(newCameraLocation), ANIMATION_DURATION, null);
 
-        Building building = buildingMap.get(marker);
-        textViewName.setText(building.getName());
-        textViewAddress.setText(building.getAddress());
-        button.setTag(building.getName());
+        BuildingEntity buildingEntity = buildingMap.get(marker);
+        textViewName.setText(buildingEntity.getName());
+        textViewAddress.setText(buildingEntity.getAddress());
+        button.setTag(buildingEntity.getName());
 
         infoWindowContainer.setVisibility(VISIBLE);
 

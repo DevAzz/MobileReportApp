@@ -1,16 +1,23 @@
 package ru.kpfu.mobilereportapp;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import ru.kpfu.mobilereportapp.Entity.UserEntity;
+
 
 public class LogInActivity extends ActionBarActivity {
+
+    public static final String APP_PREFERENCES = "mysettings";
+
+    private static final String PATH_KEY = "photo_path";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,11 +28,21 @@ public class LogInActivity extends ActionBarActivity {
         EditText editTextPass = (EditText) findViewById(R.id.editTextPass);
         Button button = (Button) findViewById(R.id.buttonLogIn);
 
+        SharedPreferences sPref = getSharedPreferences(APP_PREFERENCES, MODE_PRIVATE);
+
+        // TODO Временно
+        final UserEntity user = new UserEntity(0, "Тестовый Юзер", "ВШ ИТИС");
+        user.setAvatarPath(sPref.getString(PATH_KEY, ""));
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LogInActivity.this, ComplaintActivity.class);
-                startActivity(intent);
+                try {
+                    Intent intent = new Intent(LogInActivity.this, ComplaintActivity.class);
+                    intent.putExtra(UserEntity.class.getCanonicalName(), user);
+                    startActivity(intent);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
     }

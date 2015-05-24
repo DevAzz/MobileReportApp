@@ -12,6 +12,8 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+import ru.kpfu.mobilereportapp.Entity.UserEntity;
+
 /**
  * Created by Azz on 25.04.2015.
  */
@@ -20,6 +22,7 @@ public class DialogSort extends DialogFragment {
     private android.widget.AdapterView.OnItemClickListener onItemClickListener;
     private ListView listSort;
     public static String TAG = "DialogSort";
+    public static String KEY = "Activity";
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -59,6 +62,8 @@ public class DialogSort extends DialogFragment {
 
                     case 0:
                         Intent intent = new Intent(getActivity(), GeoMapsActivity.class);
+                        intent.putExtra(KEY, TAG);
+                        intent.putExtra(UserEntity.class.getCanonicalName(), getActivity().getIntent().getParcelableExtra(UserEntity.class.getCanonicalName()));
                         startActivity(intent);
                         break;
                 }

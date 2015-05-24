@@ -5,21 +5,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
+
+import ru.kpfu.mobilereportapp.Entity.ComplaintEntity;
 
 /**
  * Адаптер для списка жалоб
  * Created by Azz on 09.03.2015.
  */
-public class AdapterComplaintList extends ArrayAdapter<ComplaintModel> {
-    private final List<ComplaintModel> list;
+public class AdapterComplaintList extends ArrayAdapter<ComplaintEntity> {
+    private final List<ComplaintEntity> list;
     private final Activity context;
 
-    AdapterComplaintList(Activity context, List<ComplaintModel> list) {
-        super(context, R.layout.my_list, list);
+    AdapterComplaintList(Activity context, List<ComplaintEntity> list) {
+        super(context, R.layout.complaint_layout, list);
         this.context = context;
         this.list = list;
     }
@@ -27,39 +29,56 @@ public class AdapterComplaintList extends ArrayAdapter<ComplaintModel> {
     // пункт списка
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+
         View view = null;
         if (convertView == null) {
             LayoutInflater inflater = context.getLayoutInflater();
-            view = inflater.inflate(R.layout.my_list, null);
-            final ViewHolder viewHolder = new ViewHolder();
-            viewHolder.textComplaint = (TextView) view.findViewById(R.id.textViewTextComplaint);
-            viewHolder.status = (TextView) view.findViewById(R.id.textViewStatus);
-            viewHolder.countComments = (TextView) view.findViewById(R.id.textViewCountComments);
-            viewHolder.rating = (TextView) view.findViewById(R.id.textViewRating);
-            viewHolder.imageButtonComments = (ImageButton) view.findViewById(R.id.imageButtonComments);
-            viewHolder.imageButtonComments.setFocusable(false);
-            viewHolder.imageButtonRating = (ImageButton) view.findViewById(R.id.imageButtonRating);
-            viewHolder.imageButtonRating.setFocusable(false);
-            view.setTag(viewHolder);
+            view = inflater.inflate(R.layout.complaint_layout, null);
+            final ViewHolder holder = new ViewHolder();
+            holder.textViewOwner = (TextView) view.findViewById(R.id.textViewOwner);
+            holder.textViewTitle = (TextView) view.findViewById(R.id.textViewTitle);
+            holder.textViewDate = (TextView) view.findViewById(R.id.textViewDate);
+            holder.ivImage = (ImageView) view.findViewById(R.id.ivImage);
+            holder.textViewTextComplaint = (TextView) view.findViewById(R.id.textViewTextComplaint);
+            holder.textViewStatus = (TextView) view.findViewById(R.id.textViewStatus);
+            holder.textViewCountComments =(TextView) view.findViewById(R.id.textViewCountComments);
+            holder.imageViewCountComments = (ImageView) view.findViewById(R.id.imageViewCountComments);
+            holder.textViewRating = (TextView) view.findViewById(R.id.textViewRating);
+            holder.imageViewRating = (ImageView) view.findViewById(R.id.imageViewRating);
+            view.setTag(holder);
         } else {
             view = convertView;
         }
-        ViewHolder holder = (ViewHolder) view.getTag();
-        holder.textComplaint.setText(list.get(position).get_text());
-        holder.status.setText(list.get(position).get_status());
-        holder.countComments.setText(String.valueOf(list.get(position).get_countComment()));
-        holder.rating.setText(String.valueOf(list.get(position).get_rating()));
+        try {
+            ViewHolder holder = (ViewHolder) view.getTag();
+            holder.textViewOwner.setText(list.get(position).getOwner().getNameUser());
+            holder.textViewTitle.setText(list.get(position).getTitle());
+            holder.textViewDate.setText(list.get(position).getDate());
+            //TODO Временно, исправить
+            holder.ivImage.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_launcher));
+            holder.textViewTextComplaint.setText(list.get(position).getDescription());
+            holder.textViewStatus.setText(list.get(position).getStatus());
+            holder.textViewCountComments.setText(String.valueOf(list.get(position).getComments().size()));
+            holder.imageViewCountComments.setImageDrawable(context.getResources().getDrawable(R.drawable.comment));
+            holder.textViewRating.setText(String.valueOf(list.get(position).getRating()));
+            holder.imageViewRating.setImageDrawable(context.getResources().getDrawable(R.drawable.star));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return view;
     }
 
     static class ViewHolder {
-        protected TextView textComplaint;
-        protected TextView status;
-        protected TextView countComments;
-        protected TextView rating;
-        protected ImageButton imageButtonComments;
-        protected ImageButton imageButtonRating;
-
+        TextView textViewOwner;
+        TextView textViewTitle;
+        TextView textViewDate;
+        ImageView ivImage;
+        TextView textViewTextComplaint;
+        TextView textViewStatus;
+        TextView textViewCountComments;
+        ImageView imageViewCountComments;
+        TextView textViewRating;
+        ImageView imageViewRating;
     }
 
 }
