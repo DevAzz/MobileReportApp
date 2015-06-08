@@ -12,6 +12,19 @@
 
     <string name="action_settings">Settings</string>
 
+    <!-- Активити добавления Жалобы-->
+    <string name="textViewBuilding"> Выбранное здание </string>
+    <string name="titleAddComplaint"> Добавить заявку </string>
+    <string name="hintEnterText"> Введите текст заявки </string>
+    <string name="headerDialogSelectFloorsTrue"> Выберете этаж </string>
+    <string name="headerDialogSelectFloorsFalse"> Здание не выбрано </string>
+    <string name="titleComplaint"> Все заявки </string>
+    <string name="titleUserComplaint"> Мои заявки </string>
+    <string name="titleDetailComplaint"> Детали заявки </string>
+    <string name="addComment">Добавить комментарий</string>
+    <string name="emptyTextCommentMessage">Введите текст комментария</string>
+
+
     <!-- Активити жалоб -->
     <string name="textViewTextComplaint">Дефолтный текст жалобы</string>
     <string name="textViewStatus">дефолтный статус</string>
@@ -78,9 +91,27 @@
     <!-- Настройки -->
     <string name="title_activity_settings">SettingsActivity</string>
     <string name="preferencesUserHeader">"Настройки"</string>
+    <string name="preferencesUserSubTitle">"Пользовательские настройки"</string>
     <string name="textPreferencesUserPhoto">"Фото пользователя"</string>
-    <string name="buttonPreferencesUserPhoto">"Загрузить фото"</string>
+    <string name="buttonPreferencesUserPhoto">"Загрузить фото  "</string>
 
+    <!-- LogIn Activity -->
+    <string name="LogInHeader">"Мобильный репортер"</string>
+    <string name="hintLogin">Логин</string>
+    <string name="hintPassword">Пароль</string>
+    <string name="buttonReg"> Регистрация </string>
 
+    <!-- RegistrationActivity -->
+    <string name="hintEditTextFacultyId">ID факультета </string>
+    <string name="hintEditTextConfirmPassword">Подтверждение</string>
+    <string name="successMessage">Вы успешно зарегестрированы</string>
+    <string name="emptyFieldsMessage">Заполните все поля</string>
+    <string name="titleRegActivity">Регистрация</string>
+
+    <!-- Сервер -->
+    <string name="messageServerUnknown"> Сервер не найден </string>
+    <string name="title_activity_registration">RegistrationActivity</string>
+
+    <string name="hello_world">Hello world!</string>
 
 </resources>

@@ -1,32 +1,61 @@
 <FrameLayout
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#ffffff">
 
-    <EditText
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/editTextlogin"
         android:layout_gravity="center"
-        android:layout_marginBottom="10dp" />
+        android:layout_marginTop="10dp">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/editTextPass"
-        android:layout_gravity="center"
-        android:layout_marginTop="40dp" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/editTextlogin"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:hint="@string/hintLogin"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/buttonLogIn"
-        android:id="@+id/buttonLogIn"
-        android:layout_gravity="center"
-        android:layout_marginTop="90dp" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/editTextPass"
+            android:layout_gravity="center"
+            android:hint="@string/hintPassword"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="@string/buttonLogIn"
+            android:id="@+id/buttonLogIn"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:gravity="left|center_vertical"
+            android:textSize="15sp"
+            android:textStyle="bold|italic"
+            android:drawableRight="@drawable/selector_button_icon"
+            android:background="@drawable/selector_button"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="@string/buttonReg"
+            android:id="@+id/buttonReg"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:gravity="left|center_vertical"
+            android:textSize="15sp"
+            android:textStyle="bold|italic"
+            android:drawableRight="@drawable/selector_button_reg_icon"
+            android:background="@drawable/selector_button"/>
+    </LinearLayout>
+
 </FrameLayout>
 

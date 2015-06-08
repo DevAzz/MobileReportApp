@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#ffffff">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="8">
+        android:layout_height="wrap_content">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/preferencesUserHeader"
+            android:text="@string/preferencesUserSubTitle"
             android:id="@+id/textViewPrefHeader"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp" />
 
         <View xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginBottom="5dp"
             android:layout_marginTop="@dimen/margin_medium"
             android:background="#9000"/>
     </LinearLayout>
@@ -29,19 +29,25 @@
         android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_normal"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp">
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="fill_parent"
+            android:layout_width="0dp"
             android:layout_height="fill_parent"
-            android:layout_weight="1">
+            android:layout_weight="1.13">
 
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal">
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -49,29 +55,37 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="@string/textPreferencesUserPhoto"
                     android:id="@+id/textViewPreferencesUserPhoto"
-                    android:layout_gravity="center_horizontal" />
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="5dp" />
 
                 <Button
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="61dp"
                     android:text="@string/buttonPreferencesUserPhoto"
                     android:id="@+id/buttonPreferencesUserPhoto"
                     android:layout_marginTop="10dp"
-                    android:layout_gravity="center_horizontal" />
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="15sp"
+                    android:textStyle="bold|italic"
+                    android:drawableRight="@drawable/selector_button_setting_icon"
+                    android:background="@drawable/selector_button"/>
             </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="fill_parent"
+            android:layout_width="0dp"
             android:layout_height="fill_parent"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:layout_marginTop="10dp">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/imageViewPhoto"
-                android:layout_gravity="center_horizontal|top"/>
+                android:layout_gravity="center_horizontal|top"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/button_normal"/>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
